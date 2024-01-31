@@ -6,11 +6,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 public class RestTemplateTest {
+//    I am typing this to make it slightly different from the code on the master branch
     public static void main(String[] args) {
 //        instantiate a rest
         RestTemplate restTemplate = new RestTemplate();
         String url = "http://localhost:8080/api/v1/students";
-        JavaStudent student = new JavaStudent("Man", "Dan", "Female", 19, "email@gmail.com", "Java1234");
+        JavaStudent student = new JavaStudent("Man", "Dan", "Female", 19,
+                "email@gmail.com", "Java1234", "09065478394");
         ResponseEntity<JavaStudent> response = restTemplate.postForEntity(url, student, JavaStudent.class);
         JavaStudent extractedResponse = response.getBody();
         System.out.println(extractedResponse);
